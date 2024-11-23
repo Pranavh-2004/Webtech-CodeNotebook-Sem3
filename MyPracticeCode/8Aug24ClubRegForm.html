@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Club Registration Form</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>Club Registration Form</h1>
+    <form method="post" action="ClubReg.php" target="_blank">
+    <label for="name_input">Name:</label>
+    <input type="text" name="name" placeholder="Name" id="name_input">
+    <br>
+    <br>
+    <label for="srn_input">SRN:</label>
+    <input type="text" name="srn" placeholder="SRN" id="srn_input">
+    <br>
+    <br>
+    <label for="dept_input">Department</label>
+    <select name="dept" id="dept_input">
+        <option value="CSE" selected>CSE</option>
+        <option value="AIML">AIML</option>
+        <option value="ECE">ECE</option>
+        </select>
+    <br>
+    <br>
+    <label for="radio_input">Role</label>
+    <br>
+    <input type="radio" name="role" value="Club Head" id="radio_input-1">
+    <label for="radio_input-1">Club Head</label>
+    <br>
+    <input type="radio" name="role" value="Club Secretary" id="radio_input-2">
+    <label for="radio_input-2">Club Secretary</label>
+    <br>
+    <input type="radio" name="role" value="Club Accounts" id="radio_input-3">
+    <label for="radio_input-3">Club Accounts</label>
+    <br>
+    <br>
+    <label for="checkbox_input">Branch</label>
+    <br>
+    <input type="checkbox" name="jan-may" value="Jan-May" id="checkbox_input-1">
+    <label for="checkbox_input-1">Jan-May</label>
+    <br>
+    <input type="checkbox" name="aug-dec" value="Aug-Dec" id="checkbox_input-2">
+    <label for="checkbox_input-2">Aug-Dec</label>
+    <br>
+    <input type="checkbox" name="jun-july" value="Jun-July" id="checkbox_input-3">
+    <label for="checkbox_input-3">Jun-July</label>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+    </form>
+</body>
+</html>

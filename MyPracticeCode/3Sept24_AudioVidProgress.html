@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media</title>
+  </head>
+  <body>
+    <audio autoplay controls loop muted preload>
+      <source src="source1.ogg" />
+      <source src="source2.mp3" />
+      <source src="source3.wav" />
+    </audio>
+    <br />
+    <br />
+
+    <video width="380px" height="240px" autoplay controls loop muted preload>
+      <source src="source1.ogg" />
+      <source src="source2.mp4" />
+      <source src="source3.avi" />
+    </video>
+
+    <script>
+      let vid = document.querySelector("video");
+      vid.play();
+    </script>
+    <br />
+    <br />
+
+    <progress id="file" value="32" max="100">32%</progress>
+
+    <script>
+      let pr = document.querySelector("progress");
+
+      let tm = setInterval(() => {
+        pr.value += 10;
+        if (pr.value > 50) {
+          clearInterval(tm);
+        }
+      }, 2000);
+    </script>
+    <br />
+    <br />
+
+    <progress id="progress-bar"></progress>
+  </body>
+</html>

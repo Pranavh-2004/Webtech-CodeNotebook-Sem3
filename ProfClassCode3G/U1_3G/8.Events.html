@@ -1,0 +1,24 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<ul>
+			<li id="li1">Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+		</ul>
+		<script>
+			let lies = document.querySelectorAll("li");
+			
+			for(li in lies){
+				lies[li].onmouseover = (event)=>{
+					event.target.style.color = "red";
+				}
+				lies[li].addEventListener("mouseout", (event)=>{
+					event.target.style.color = "black";
+				})
+			}
+		</script>
+	</body>
+</html>

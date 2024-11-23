@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			let container = document.querySelector("#root");
+			
+			let root = ReactDOM.createRoot(container);
+			
+			class MyForm extends React.Component{
+				constructor(props){
+					super(props);
+					this.submithandler=this.submithandler.bind(this)
+				}
+				submithandler(event){
+					this.para.innerHTML = this.input.value + 1;
+					event.preventdefault();
+				}
+				render(){
+					return(
+	<div>
+		<form onSubmit={this.sumithandler}>
+			<input defaultValue="0" ref={(el)=>this.input=el}/>
+			<button type="submit">Submit</button>
+		</form>
+		<p ref={(el)=>this.para=el}></p>
+	</div>
+					)
+				}
+			}
+			
+			root.render(
+				<div>
+					<MyForm/>
+				</div>
+			);
+		</script>
+	</body>
+</html>

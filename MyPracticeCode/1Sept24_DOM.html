@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Document object model</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <h1>DOM sample</h1>
+    <div>
+      List div
+      <ul>
+        <li id="id1">Item A</li>
+        <li class="listclass">Item B</li>
+        <li querySelector="qs">Item C</li>
+        <li>Item D</li>
+      </ul>
+    </div>
+    <div id="img_slideshow"></div>
+    <div>
+      random list generator
+      <button></button>
+      <ol></ol>
+    </div>
+
+    <script defer>
+      console.log(document.body.children);
+      let ul = document.querySelector("ul");
+      console.log(ul);
+
+      let newli = document.createElement("li");
+      newli.innerHTML = "Item E";
+      ul.appendChild(newli);
+
+      let newli1 = document.createElement("li");
+      newli1.innerHTML = "Item F";
+      ul.insertBefore(newli1, ul.firstChild);
+
+      let newli2 = document.createElement("li");
+      newli2.innerHTML = "Item G";
+      ul.replaceChild(newli2, ul.children[2]);
+
+      ul.removeChild(ul.firstChild);
+
+      newli2.remove();
+
+      const images = ["img1.jpg", "img2.jpg", "img3.jpg"];
+
+      let div = document.querySelector("div");
+
+      //   for(i in images){
+
+      //   }
+
+      let lies = document.querySelectorAll("li");
+
+      for (let li in lies) {
+        lies[li].onmouseover = () => {
+          lies[li].style.color = "red";
+        };
+        lies[li].addEventListener("mouseout", () => {
+          lies[li].style.color = "black";
+        });
+      }
+
+      let ol = document.querySelector("ol");
+      let newli = document.createElement("li");
+      newli.innerHTML = Math.random();
+      ul.appendChild(newli);
+    </script>
+
+    <!-- simple event handler  -->
+  </body>
+</html>

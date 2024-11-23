@@ -1,0 +1,38 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<audio autoplay="y" controls="y" loop="y">
+			<source src="Jai Ho.mp3" type="audio/mp3"/>
+			<source src="song.wma" type="audio/wma"/>
+			Audio tag or format not supported.
+		</audio>
+		<script>
+			let au = document.querySelector("audio");
+			au.play();
+			au.pause();
+		</script>
+		<video width="300px" height="400px" controls="y" autoplay="y" audio="muted">
+			<source src="Avengers.mp4" type="video/mp4"/>
+			<source src="Avengers.wmv" type="video/wmv"/>
+			Video tag or format not supported.
+		</video>
+		<script>
+			let vid = document.querySelector("video");
+			vid.play();
+			//au.pause();
+		</script>
+		<label>Registration progress</label>
+		<progress value="10" max="50"/>
+		<br/>
+		<script>
+			let pr = document.querySelector("progress");
+			
+			let tm = setInterval(()=>{
+				pr.value+=10;
+				if(pr.value > 50)
+					clearInterval(tm);
+			}, 2000)
+		</script>
+	</body>
+</html>

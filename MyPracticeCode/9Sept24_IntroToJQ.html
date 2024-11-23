@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+    <script>
+      $("li").css("color", "red");
+
+      let newli = document.createElement("li");
+      $(newli).html("New list item");
+      $("ul").append(newli);
+
+      $(newli).html($(newli).html() + " in " + $(newli).css("color"));
+
+      $(newli)
+        .fadeOut(3000, () => {
+          $(newli).html("Im back..!!");
+        })
+        .fadeIn(3000);
+
+      //   //hide and show
+      //   $(newli).hide();
+      //   $(newli).show();
+      //   $(newli).toggle();
+
+      // for ready event
+      // do not use arrow function
+      $("li").click(function () {
+        $(this).html("Oops i got clicked").css("color", "blue");
+      });
+    </script>
+    <img src="./Untitled design (1) copy.png" alt="" />
+    <script>
+      let imgnames = [
+        "./pexels-adria-masi-461420600-27962172.jpg",
+        "./pexels-tomas-malik-793526-27244360.jpg",
+      ];
+      // let newimg =
+    </script>
+  </body>
+</html>

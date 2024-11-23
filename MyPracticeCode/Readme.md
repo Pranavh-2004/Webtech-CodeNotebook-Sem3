@@ -1,0 +1,1 @@
+This code folder is my personal code notebook for the Aug-Dec semester 3 2024 for the Subject WebTechnologies. The code here is written solely for my practice and may be incorrect, unoptimized or incomplete. Please refer to it with caution

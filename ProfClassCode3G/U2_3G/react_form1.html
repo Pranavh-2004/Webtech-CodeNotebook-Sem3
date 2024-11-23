@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			let container = document.querySelector("#root");
+			
+			let root = ReactDOM.createRoot(container);
+			
+			class MyForm extends React.Component{
+				constructor(props){
+					super(props);
+					this.state={
+						inpval:"0",
+						operation:"p1"
+					}
+					this.handlechange = this.handlechange.bind(this);
+					this.handlesubmit = this.handlesubmit.bind(this);
+				}
+				/*handlechange(event){
+					this.setState({
+						inpval:event.target.value
+					})
+				}*/
+				handlechange(event){
+					elname = event.target.name
+					elvalue = event.target.value
+					this.setState({
+						[elname]:elvalue
+					})
+				}
+				selecthandler(event){
+					this.setState({
+						operation:event.target.value
+					})
+				}
+				handlesubmit(event){
+					this.para.innerHTML = parseInt(this.state.inpval)+1;
+					event.preventDefault();
+				}
+				render(){
+					return(
+	<div>
+		<form onSubmit={this.handlesubmit}>
+			<input name="inpval" value={this.state.inpval} onChange={this.handlechange}/>
+			<select name="operation" value={this.state.operation} onChange={this.handlechange}>
+				<option value="p1">Add 1</option>
+				<option value="db">Double It</option>
+			</select>
+			<button type="submit">Submit</button>
+		</form>
+		<p ref={(el)=>this.para=el</p>}></p>
+	</div>
+					)
+				}
+			}
+			
+			root.render(
+				<div>
+					<MyForm/>
+				</div>
+			);
+		</script>
+	</body>
+</html>

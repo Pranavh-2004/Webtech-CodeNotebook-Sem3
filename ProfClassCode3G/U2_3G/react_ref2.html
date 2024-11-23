@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			let container = document.querySelector("#root");
+			
+			let root = ReactDOM.createRoot(container);
+			
+			class MyDiv extends React.Component{
+				constructor(props){
+					super(props);
+				}
+				
+				render(){
+					return(
+						<div ref={this.props.setRef}> My Div </div>
+					)
+				}
+			}
+			class MyParentDiv extends React.Component{
+				constructor(props){
+					super(props);
+					this.mySetRef = (element)=>{
+						this.myRef = element;
+					}
+				}
+				componentDidMount(){
+					this.myRef.innerHTML = "I got Changed";
+					this.myRef.style.backgroundColor = "yellow";
+				}
+				render(){
+					return(
+						<MyDiv setRef={this.mySetRef}/>
+					)
+				}
+			}
+			root.render(
+				<div>
+					<MyParentDiv/>
+				</div>
+			);
+		</script>
+	</body>
+</html>

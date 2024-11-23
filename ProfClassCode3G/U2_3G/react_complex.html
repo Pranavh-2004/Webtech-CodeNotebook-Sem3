@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin> </script>
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+		</script>
+		<style>
+			.reaction{
+				display:inline
+			}
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			let container = document.querySelector("#root");
+			
+			let root = ReactDOM.createRoot(container);
+			
+			function Author(props){
+				return(
+					<div>
+						<h4>{props.author}</h4>
+						<p>{props.authhandle}</p>
+					</div>
+				)
+			}
+			
+			function TimeStamp(props){
+				return(
+					<p>{props.when}</p>
+				)
+			}
+			
+			function Content(props){
+				return(
+					<p>{props.content}</p>
+				)
+			}
+			
+			function Reaction(props){
+				return(
+					<div>
+						<p className="reaction">{props.numlikes} like</p>
+						<p className="reaction">{props.numcomm} comments</p>
+					</div>
+				)
+			}
+			class Post extends React.Component{
+				render(){
+					return(
+						<div>
+							<Author {...this.props}/>
+							<TimeStamp {...this.props}/>
+							<Content {...this.props}/>
+							<Reaction {...this.props}/>
+						</div>
+					)
+				}
+			}
+			
+			root.render(
+				<div>
+					<Post author="Elon Musk" authhandle="@emusk" when="1 min ago" content="I dont like Kamala Harris" numlikes="1" numcomm="3"/>
+					<Post author="Namo" authhandle="@pmmodi" when="1 min ago" conten="10 years of Mann Ki Baat" numlikes="12345" numcomm="23456"/>
+				</div>
+			);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+      crossorigin
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel" data-presents="react, stage-3">
+      class MyForm extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { inpval: "0", operation: "p1" };
+          this.handlechange = this.handlechange.bind(this);
+          this.handlesubmit = this.handlesubmit.bind(this);
+        }
+
+        // handlechange(event) {
+        //   this.setState({
+        //     inpval: event.target.value,
+        //   });
+        // }
+
+        handlechange(event) {
+          elname = event.target.name;
+          elvalue = event.target.value;
+          this.setState({
+            [elname]: elvalue,
+          });
+        }
+
+        selecthandler(event) {
+          this.setState({
+            operation: event.target.value,
+          });
+        }
+
+        handlesubmit(event) {
+          this.para.innerHTML = parseInt(this.state.inpval) + 1;
+          event.preventDefault();
+        }
+
+        render() {
+          return (
+            <div>
+              <form action="" onSubmit={this.handlesubmit}>
+                <input
+                  type="text"
+                  name="inpval"
+                  value={this.state.inpval}
+                  onChange={this.handlechange}
+                />
+                <select
+                  name="operation"
+                  id=""
+                  value={this.state.operation}
+                  //   onChange={this.selecthandler}
+                  onChange={this.handlechange}
+                >
+                  <option value="p1">Add 1</option>
+                  <option value="db">Double it</option>
+                </select>
+                <button type="submit">Submit</button>
+              </form>
+              <p ref={(el) => (this.para = el)}></p>
+            </div>
+          );
+        }
+      }
+      ReactDOM.createRoot(document.getElementById("root")).render(<MyForm />);
+    </script>
+  </body>
+</html>

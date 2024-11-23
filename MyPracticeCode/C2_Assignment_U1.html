@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment_U1</title>
+    <style>
+      #logo {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 4px;
+        right: 4px;
+      }
+
+      body {
+        background-color: #add8e6;
+      }
+
+      #head_row {
+        background-color: #305cde;
+        color: white;
+      }
+
+      table {
+        background-color: white;
+        width: 100%;
+      }
+
+      #survey_container {
+        background-color: white;
+        width: 25%;
+        border-radius: 5px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #name,
+      #mail,
+      #phno,
+      #fav_event,
+      #pref_date {
+        width: 100%;
+        height: 20px;
+      }
+
+      button {
+        width: 50%;
+        height: 30px;
+        background-color: #305cde;
+        border-radius: 5px;
+        color: white;
+      }
+
+      
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Olympics Games 2024 Paris</h1>
+      <h2>Olympics Games 2024 Highlights</h2>
+      <img
+        id="logo"
+        src="./paris-2024-olympics-banner-new-logo-icon-vector-iilustration_895118-12103.avif"
+        alt="Paris Olympics Logo"
+      />
+    </div>
+
+    <div>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr id="head_row">
+          <th colspan="2">Event</th>
+          <th>Date</th>
+          <th>Location</th>
+        </tr>
+        <tr>
+          <td rowspan="2">Opening Ceremony</td>
+          <td>Main Stadium</td>
+          <td>26 July 2024</td>
+          <td>Paris, France</td>
+        </tr>
+        <tr>
+          <td>Beach Events</td>
+          <td>27 July 2024</td>
+          <td>Nice, France</td>
+        </tr>
+        <tr>
+          <td colspan="2">Opening Ceremony</td>
+          <td>11 August 2024</td>
+          <td>Paris, France</td>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <h2>Survey Form</h2>
+      <div id="survey_container">
+        <form id="survey_form">
+          <label for="name">Name:</label>
+          <br />
+          <input type="text" id="name" required />
+          <br /><br />
+          <label for="mail">Email:</label>
+          <br />
+          <input type="email" id="mail" required />
+          <br /><br />
+          <label for="phno">Mobile Number:</label>
+          <br />
+          <input
+            type="tel"
+            id="phno"
+            pattern="[1-9][0-9]{9}"
+            maxlength="10"
+            minlength="10"
+            required
+          />
+          <br /><br />
+          <label for="gender">Gender:</label>
+          <br />
+          <input type="radio" name="gender" id="male" required />
+          <label for="male">Male</label>
+          <input type="radio" name="gender" id="female" required />
+          <label for="female">Female</label>
+          <br /><br />
+          <label for="fav_event">Favorite Event:</label>
+          <br />
+          <select name="dropdown" id="fav_event" required>
+            <option value="">Select an event</option>
+            <option value="Athletics">Athletics</option>
+            <option value="Swimming">Swimming</option>
+            <option value="Gymnastics">Gymnastics</option>
+            <option value="Football">Football</option>
+          </select>
+          <br /><br />
+          <label for="pref_date">Preferred Date For Attending:</label>
+          <br />
+          <input type="date" id="pref_date" required />
+          <br /><br />
+          <input type="checkbox" id="tnc" required />
+          <label for="tnc">I agree to the terms and conditions</label>
+          <br /><br />
+          <button type="submit" id="sub">Submit</button>
+          <br /><br />
+          <button type="reset" id="res">Reset</button>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var nameInput = document.getElementById("name");
+    var form = document.getElementById("survey_form");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      alert("Thank you, successfully submitted " + nameInput.value + "!");
+    });
+  </script>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 3</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      #container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+      #container2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+      const appointmentStyle = {
+        border: "1px solid #ddd",
+        padding: "20px",
+        marginBottom: "10px",
+        borderRadius: "5px",
+        width: "100%",
+      };
+
+      const buttonStyle = {
+        backgroundColor: "#0cc0df",
+        color: "#fff",
+        border: "none",
+        padding: "5px 10px",
+        borderRadius: "5px",
+        cursor: "pointer",
+      };
+
+      const completedTextStyle = {
+        textDecoration: "line-through",
+        color: "#888",
+      };
+
+      function PatientRecord({ appointment, index, markAsCompleted }) {
+        return (
+          <div style={appointmentStyle}>
+            <p
+              style={
+                appointment.status === "completed" ? completedTextStyle : {}
+              }
+            >
+              <strong>{appointment.name}</strong>
+            </p>
+            <p>{appointment.reason}</p>
+            <p>{appointment.date}</p>
+            <p>Status: {appointment.status}</p>
+            {appointment.status === "scheduled" && (
+              <button
+                style={buttonStyle}
+                onClick={() => markAsCompleted(index)}
+              >
+                Mark as completed
+              </button>
+            )}
+          </div>
+        );
+      }
+
+      class PatientInfo extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            patients: [
+              {
+                name: "John Doe",
+                reason: "Routine Checkup",
+                date: "2024-08-05",
+                status: "scheduled",
+              },
+              {
+                name: "Jane Smith",
+                reason: "Consultation",
+                date: "2024-08-06",
+                status: "scheduled",
+              },
+              {
+                name: "Pranav Hemanth (PES1UG23CS433)",
+                reason: "Followup",
+                date: "2024-08-07",
+                status: "scheduled",
+              },
+            ],
+            totalCompleted: 0,
+          };
+        }
+
+        markAsCompleted = (index) => {
+          this.setState((prevState) => {
+            const updatedPatients = prevState.patients.map((patient, i) => {
+              if (i == index && patient.status === "scheduled") {
+                return { ...patient, status: "completed" };
+              }
+              return patient;
+            });
+            const completedCount = updatedPatients.filter(
+              (patient) => patient.status === "completed"
+            ).length;
+            return {
+              patients: updatedPatients,
+              totalCompleted: completedCount,
+            };
+          });
+        };
+
+        render() {
+          return (
+            <div id="container2">
+              <h3>Patient Appointments</h3>
+              {this.state.patients.map((appointment, index) => (
+                <PatientRecord
+                  key={index}
+                  appointment={appointment}
+                  index={index}
+                  markAsCompleted={this.markAsCompleted}
+                />
+              ))}
+              <h4>Total Completed Appointments: {this.state.totalCompleted}</h4>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<PatientInfo />, document.getElementById("container"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			let container = document.querySelector("#root");
+			
+			let root = ReactDOM.createRoot(container);
+			
+			class MyComp extends React.Component{
+				constructor(props){
+					super(props);
+					this.changepara=this.changepara.bind(this);
+				}
+				changepara(){
+					this.para.innerHTML = "Button changed me"
+				}
+				render(){
+					return(
+						<div>
+							<p ref={(el)=>this.para=el}></p>
+							<button onClick={this.changepara}>Change Para</button>
+						</div>
+					)
+				}
+			}
+			
+			root.render(
+				<div>
+					<MyComp/>
+				</div>
+			);
+		</script>
+	</body>
+</html>

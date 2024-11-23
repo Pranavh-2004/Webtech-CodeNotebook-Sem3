@@ -1,0 +1,32 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas width="400px" height="400px" id="c1" style="border:1px solid black">
+			Canvas not supported.
+		</canvas>
+		<script>
+			let c1 = document.querySelector("#c1");
+			let ctx = c1.getContext("2d");
+			
+			/*setInterval(()=>{*/
+				let x = Math.floor(Math.random()*300);
+				let y = Math.floor(Math.random()*300);
+				ctx.fillStyle = "red";
+				ctx.fillRect(x,y, 50, 50);
+				ctx.strokeStyle = "blue";
+				ctx.strokeRect(x,y, 50,50);
+			/*}, 2000);*/
+		</script>
+		<br/>
+		<svg width="400px" height="400px" style="border:1px solid black">
+			<circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+		</svg>
+		<script>
+			let cr = document.querySelector("circle");
+			setInterval(()=>{
+				cr.cx.baseVal.value = (cr.cx.baseVal.value+50)%400;
+			}, 2000)
+		</script>
+	</body>
+</html>

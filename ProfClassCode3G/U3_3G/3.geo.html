@@ -1,0 +1,16 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<div id="pos"></div>
+		<script>
+			navigator.geolocation.watchPosition(show, error);
+			function show(position){
+				document.querySelector("#pos").innerHTML = position.coords.latitude+" "+position.coords.longitude;
+			}
+			function error(err){
+				document.querySelector("#pos").innerHTML = err.code + " " + err.message;
+			}
+		</script>
+	</body>
+</html>

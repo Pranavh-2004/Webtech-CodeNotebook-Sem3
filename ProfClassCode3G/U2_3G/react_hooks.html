@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			let container = document.querySelector("#root");
+			
+			let root = ReactDOM.createRoot(container);
+			
+			function Counter(props){
+	const [count, setCount] = React.useState(0);
+	
+	React.useEffect(()=>{
+		setTimeout(()=>{setCount(count+1)},1000);
+	}, [count])
+	
+		return(
+		<div>
+			<p>{count}</p>
+			<!--button onClick={setCount(count+1)}>Increment</button-->
+		</div>
+				)
+			}
+			
+			root.render(
+				<div>
+					<Counter/>
+				</div>
+			);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,119 @@
+<!-- Up Counter Program -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Boilerplate</title>
+
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      class Counter extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            count: 0,
+          };
+        }
+
+        componentDidMount() {
+          this.interval = setInterval(() => {
+            this.setState((prevState) => ({
+              count: prevState.count + 1,
+            }));
+          }, 1000);
+        }
+
+        componentWillUnmount() {
+          clearInterval(this.interval);
+        }
+
+        render() {
+          return (
+            <div>
+              <h1>Counter: {this.state.count}</h1>
+            </div>
+          );
+        }
+      }
+
+      const container = document.querySelector("#root");
+      const root = ReactDOM.createRoot(container);
+      root.render(<Counter />);
+    </script>
+  </body>
+</html>
+
+<!-- Down Counter Program -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Boilerplate</title>
+
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      class Counter extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            count: 100,
+          };
+        }
+
+        componentDidMount() {
+          this.interval = setInterval(() => {
+            this.setState((prevState) => ({
+              count: prevState.count - 1,
+            }));
+          }, 1000);
+        }
+
+        componentWillUnmount() {
+          clearInterval(this.interval);
+        }
+
+        render() {
+          return (
+            <div>
+              <h1>Counter: {this.state.count}</h1>
+            </div>
+          );
+        }
+      }
+
+      const container = document.querySelector("#root");
+      const root = ReactDOM.createRoot(container);
+      root.render(<Counter />);
+    </script>
+  </body>
+</html> -->

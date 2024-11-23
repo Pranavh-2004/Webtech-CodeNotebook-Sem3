@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Form</title>
+    </head>
+    <body>
+        <form method="post" action="survey.py" target="_blank">
+        <label for="Username_input">Username:</label>
+        <input type="text" name="Username" placeholder="Username" id="Username_input">
+        <br>
+        <label for="Password_input">Password:</label>
+        <input type="password" name="Password" placeholder="Password" id="Password_input">
+        <br>
+        <br>
+        <label for="radio_input">Gender</label>
+        <br>
+        <input type="radio" name="Gender" value="Male" id="radio_input-1">
+        <label for="radio_input-1">Male</label>
+        <br>
+        <input type="radio" name="Gender" value="Female" id="radio_input-2">
+        <label for="radio_input-2">Female</label>
+        <br>
+        <br>
+        <label for="age_input">Age:</label>
+        <input type="number" name="age" placeholder="" id="age_input">
+        <br>
+        <br>
+        <label for="email_input">Email:</label>
+        <input type="email" name="email" placeholder="yourmail@example.com" id="email_input">
+        <br>
+        <br>
+        <label for="tel_input">Contact number:</label>
+        <input type="tel" name="Contact" placeholder="9999999999" id="tel_input">
+        <br>
+        <br>
+        <label for="dropdown_input">Country</label>
+        <select name="country_code" id="dropdown_input">
+            <option value="in" selected>India</option>
+            <option value="us">United States</option>
+            <option value="dl">Germany</option>
+            </select>
+        <br>
+        <br>
+        <label for="url_input">Portfolio Website:</label>
+        <input type="url" name="url" placeholder="" id="url_input">
+        <br>
+        <br>
+        <label for="sal_input">Salary:</label>
+        <input type="range" name="sal" placeholder="" id="sal_input">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    </body>
+</html>

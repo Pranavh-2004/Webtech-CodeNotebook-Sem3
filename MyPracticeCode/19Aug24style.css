@@ -1,0 +1,16 @@
+#ext {
+    color: blue;
+    background: pink;
+}
+
+p.int {
+    font-size: 50px;
+}
+
+.pseudo-class {
+    font-size: 20px;
+}
+
+.pseudo-class:hover {
+    color: blue;
+}

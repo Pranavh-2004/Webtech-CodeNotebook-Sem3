@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+      crossorigin
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel" data-presents="react, stage-3">
+      class MyForm extends React.Component {
+        constructor(props) {
+          super(props);
+          this.submithandler = this.submithandler.bind(this);
+        }
+
+        submithandler(event) {
+          this.para.innerHTML = this.input.value + 1;
+          event.preventDefault();
+        }
+
+        render() {
+          return (
+            <div>
+              <h2>Uncontrolled form</h2>
+              <form action="" onSubmit={this.submithandler}>
+                <input defalutvalue="0" ref={(el) => (this.input = el)} />
+                <button type="submit">Submit</button>
+              </form>
+              <p ref={(el) => (this.para = el)}></p>
+            </div>
+          );
+        }
+      }
+      ReactDOM.createRoot(document.getElementById("root")).render(<MyForm />);
+    </script>
+  </body>
+</html>

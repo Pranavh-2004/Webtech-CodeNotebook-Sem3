@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			let container = document.querySelector("#root");
+			
+			let root = ReactDOM.createRoot(container);
+			
+			class Counter extends React.Component {
+				constructor(props){
+					super(props);
+					this.state={
+						count:0
+					};
+					this.timer = this.timer.bind(this);
+				}
+				timer(){
+					this.setState((prevState)=>{
+						return{
+						count:prevState.count+1};
+					})
+				}
+				componentDidMount(){
+					setInterval(this.timer, 1000)
+				}
+				render(){
+					return(
+						<div>
+							{this.state.count}
+						</div>
+					)
+				}
+			}
+			
+			class CouterDisplay extends React.Component {
+				render(){
+					return(
+						<div>
+							<Counter/>
+							<p>Seconds since the page loaded</p>
+						</div>
+					)
+				}
+			}
+			
+			root.render(
+				<div>
+					<CouterDisplay/>
+				</div>
+			);
+		</script>
+	</body>
+</html>

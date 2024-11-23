@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<style>
+			p {
+			
+			}
+		</style>
+		<script>
+			/*function add(a=0, b=0){
+				if (a == undefined)
+					return 0;
+				else if (b == undefined)
+					return a;
+				else
+					return a + b;
+				/* if(!isNaN(a+b))
+					else
+					return -1;*/
+			}*/
+			/*function add(){
+				let sum = 0;
+				for let i in arguments
+					sum += arguments[i];
+				return sum;
+			}*/
+			function add(...args){
+				let sum = 0;
+				for (let i in args)
+					sum += args[i];
+				return sum;
+			}
+		</script>
+	</head>
+	<body>
+		<script>
+			var sum = add(3); // type - number value - NaN
+			// isNaN()
+			
+			sum = add(3, 4, 5, 6);
+			
+		</script>
+	</body>
+</html>

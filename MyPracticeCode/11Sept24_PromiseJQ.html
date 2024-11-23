@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let date = new Promise(function (resolve, reject) {
+        let weather = true; // API call
+        if (weather) {
+          let datedeets = {
+            venue: "Insane Restobar",
+            Date: "13-09-2024",
+            Address: "Bull Temple Road",
+          };
+          resolve(datedeets);
+        } else {
+          let nextdatedeets = {
+            venue: "Insane Restobar",
+            Date: "14-09-2024",
+            Address: "Bull Temple Road",
+          };
+          reject(new Error("Bad weather"));
+        }
+      });
+
+      date
+        .then(function (datedeets) {
+          console.log("Wow.. going on a date..!!!");
+          console.log(datedeets);
+          let nextdate = new Promise();
+          return nextdate;
+        })
+        .then(function (nextdatedeets) {})
+        .catch(function (err) {
+          console.log("Oops.. Bad luck");
+          console.log(err.message);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+			let item = new Object();
+			item.name = "Acer 1234";
+			item["price"] = "Rs. 25000";
+			
+			document.write(item["name"]+" "+item.price+"<br/>");
+			
+			let item1 = {
+				"name":"Apple iBook Pro",
+				"price":"Rs. 120000"			
+			}
+			
+			item1.type="Laptop";
+			
+			function product(name, price){
+				this.name = name;
+				this.price = price;
+				this.show = function(){
+					document.write(this.name+" "+this.price+"<br/>");
+				}
+			}
+			class product{
+				constructor(name, price){
+					this.name = name;
+					this.price = price;
+				}
+				show(){
+					document.write(this.name+" "+this.price+"<br/>");
+				}
+			}
+			let i1 = new product("HP Fold", "Rs. 100000");
+			
+			let i2 = new product("Lenovo ideapad", "Rs. 70000");
+			
+			i1.show();
+			i2.show();
+			
+			product.prototype.type = "Premium Laptop";
+			document.write(i2.type);
+		</script>
+	</body>
+</html>

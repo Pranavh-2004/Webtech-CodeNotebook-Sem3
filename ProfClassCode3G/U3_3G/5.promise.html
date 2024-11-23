@@ -1,0 +1,32 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+			let date = new Promise(function(resolve, reject){
+				let weather = false; // API 
+				if(weather){
+					let datedets = {
+						venue:"Insane Restobar",
+						date:"13-09-2024",
+						address:"Bull Temple Road"
+					}
+					resolve(datedets);
+				}
+				else {
+					reject(new Error("Bad Weather"));
+				}
+			});
+			
+			date
+			.then(function(datedets){
+				console.log("Wow.. going on a date..!!!");
+				console.log(datedets);
+			})
+			.catch(function(err){
+				console.log("Oops.. Bad Luck");
+				console.log(err.message);
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQ AJAX</title>
+    <script src=""></script>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      $.ajax({
+        url: "data.txt",
+        method: "get",
+        success: (data) => {
+          $("div").html(data);
+        },
+      });
+
+      $.get("data.txt", (data) => {
+        $("div").html(data);
+      });
+
+      //   $.get("data.txt", (data, status, xhr) => {    //optional headers to get response
+      //     $("div").html(data);
+      //   });
+
+      $.getJSON("7.json", (data) => {
+        $("div").html(data.title);
+      });
+
+      $("div").load("data.txt");
+
+      fetch("7.json")
+        .then((response) => {
+          return response.json();
+        })
+        .then((res) => {
+          $("div").html(res.title);
+        });
+    </script>
+  </body>
+</html>

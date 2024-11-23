@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+  </head>
+  <body>
+    <canvas
+      width="400px"
+      height="400px"
+      id="c1"
+      style="border: 1px solid black"
+    ></canvas>
+    <script>
+      let c1 = document.querySelector("#c1");
+      let ctx = c1.getContext("2d");
+
+      ctx.fillStyle = "red";
+      ctx.fillRect(100, 100, 50, 50);
+      ctx.strokeStyle = "blue";
+      ctx.strokeRect(100, 100, 50, 50);
+
+      //   setInterval(() => {
+      //     let x = Math.floor(Math.random() * 300);
+      //     let y = Math.floor(Math.random() * 300);
+      //     ctx.fillStyle = "red";
+      //     ctx.fillRect(x, y, 50, 50);
+      //     ctx.strokeStyle = "blue";
+      //     ctx.strokeRect(x, y, 50, 50);
+      //   }, 2000);
+    </script>
+
+    <svg width="400px" height="400px" id="c1" style="border: 1px solid black">
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+        stroke="black"
+        stroke-width="3"
+        fill="red"
+      ></circle>
+    </svg>
+
+    <script>
+      setInterval(() => {
+        let cr = document.querySelector("circle");
+        cr.cx.baseVal.value = (cr.cx.baseVal.value + 50) % 400;
+      }, 2000);
+    </script>
+
+    <!-- draw a smily face with canvas and svg -->
+    <svg width="400px" height="400px" id="c1" style="border: 1px solid black">
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+        stroke="black"
+        stroke-width="3"
+        fill="yellow"
+      ></circle>
+      <circle
+        cx="60"
+        cy="40"
+        r="4"
+        stroke="black"
+        stroke-width="3"
+        fill="black"
+      ></circle>
+      <circle
+        cx="40"
+        cy="40"
+        r="4"
+        stroke="black"
+        stroke-width="3"
+        fill="black"
+      ></circle>
+      <path
+        d="M 70 60 C 70 80, 110 80, 110 60"
+        stroke="black"
+        fill="transparent"
+      />
+    </svg>
+  </body>
+</html>

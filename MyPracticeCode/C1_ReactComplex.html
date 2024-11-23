@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complex React</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script
+      src="https://unpkg.com/@babel/standalone@7.10.3/babel.min.js"
+      crossorigin
+    ></script>
+    <style>
+      #postContainer {
+        border: 2px solid black;
+        margin: 5px;
+      }
+
+      .reaction-container {
+        display: flex;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel" data-presets="react, stage-3">
+      function Post({
+        author,
+        tag,
+        timestamp,
+        content,
+        likeCount,
+        shareCount,
+        commentCount,
+      }) {
+        return (
+          <div id="postContainer">
+            <h3>{author}</h3>
+            <h5>{tag}</h5>
+            <p>{timestamp}</p>
+            <p>{content}</p>
+            <div className="reaction-container">
+              <div>Likes: {likeCount}</div>
+              <div>Shares: {shareCount}</div>
+              <div>Comments: {commentCount}</div>
+            </div>
+          </div>
+        );
+      }
+
+      class App extends React.Component {
+        render() {
+          const posts = [
+            {
+              author: "John Doe",
+              tag: "JavaScript",
+              timestamp: "2022-01-01",
+              content: "This is a sample post.",
+              likeCount: 10,
+              shareCount: 5,
+              commentCount: 2,
+            },
+            {
+              author: "Jane Doe",
+              tag: "React",
+              timestamp: "2022-01-02",
+              content: "This is another sample post.",
+              likeCount: 20,
+              shareCount: 10,
+              commentCount: 5,
+            },
+          ];
+
+          return (
+            <div className="list">
+              {posts.map((post, index) => (
+                <Post key={index} {...post} />
+              ))}
+            </div>
+          );
+        }
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+
+      root.render(<App />);
+    </script>
+  </body>
+</html>
