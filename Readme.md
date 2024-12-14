@@ -28,7 +28,10 @@ This folder serves as my **personal code notebook** for the **Web Technologies**
 4. **CodeExamples (Unit1 to Unit4)**  
    Official university material, categorized by course units. These serve as reliable references for the course topics.
 
-5. **assets**  
+5. **AIML_DeptCode**  
+   Code examples provided by the AIML department for additional learning.
+
+6. **assets**  
    Contains supporting files, such as images or documents, used across various projects and examples.
 
 ---
@@ -51,3 +54,17 @@ This repository is **not intended for submission or official use**. It is a pers
 - Debugging or optimization may still be required for personal code.
 
 Please refer to the **CodeExamples** folders for accurate and verified course content.
+
+---
+
+## Additional Resources
+
+For excellent WebTech notes and references, check out:
+
+- [Anshul Paruchuri's Notes and Code Examples on WT](https://pissunotes.notion.site/Webdev-10ae366523454d2ca4421056114e9335)
+- [Anshul Paruchuri's GitHub](https://github.com/amateurmonke)
+
+- [Lekhyasree Medarametla's Notes, Questions and Summary Sheets for Unit 3](https://lekhya.notion.site/Unit-3-React-JS-Node-JS-111c9322cef7809e8c4bccc384f239fc)
+- [Lekhyasree Medarametla's GitHub](https://github.com/Lekhya25)
+
+- [PDF Notes by Senior Anurag Rao](https://drive.google.com/drive/folders/1QYkEjhr8croubXsnYGh_dSaOC9vUd3NR)
