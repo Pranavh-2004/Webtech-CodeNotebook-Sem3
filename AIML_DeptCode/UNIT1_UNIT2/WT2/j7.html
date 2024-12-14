@@ -1,0 +1,79 @@
+<!-- non promitive data types-->
+
+<html>
+<head><title>NP data-types</title>
+</head>
+<body bgcolor="lightblue">
+<p>various objects in Java Script</p>
+<script type="text/javascript">
+
+//object creation in general
+var ob=new Object();
+
+ob.name="Shashank";
+ob.roll=23;
+ob.class='A';
+ob.SRN=12345;
+ob.college="PESU";
+
+document.write(ob.name,"<br>"); //ob["name"]
+document.write(ob.roll,"<br>"); //ob["roll"]
+document.write(ob.class,"<br>"); //ob["class"]
+
+document.write("<hr>");
+
+for(i in ob)
+{
+document.write(i+"=>"+ob[i]+"<br>");
+}
+document.write("<hr>");
+
+//Number() 
+
+var num = new Number("10.45");
+document.write(typeof num,"<br>");
+document.write(num,"<br>");
+document.write("<hr>");
+
+//Date() //takes 6 parameters, (year, month, day, hour, min, sec) 
+
+var dt=new Date(); //takes current date
+
+var dat=new Date(2024, 02, 23, 8, 15, 20);
+document.write(dt,"<br>");
+document.write(dat,"<br>");
+
+document.write("<hr>");
+
+//String()
+
+var str=new String("PESU");
+document.write(typeof str,"<br>");
+document.write(str,"<br>");
+document.write("<hr>");
+
+//Boolean
+var bn = new Boolean(true);
+document.write(bn,"<br>");
+document.write("<hr>");
+
+//Math
+var m=2
+document.write(Math.pow(m,2),"<br>");
+document.write(Math.PI,"<br>");
+document.write("<hr>");
+
+//window //browser related functions
+document.write(window.m,"<br>")
+document.write(window.navigator.userAgent,"<br>")
+window.alert(window.location.href);
+document.write("<hr>");
+
+//document //functions to access and manipulate currently loaded document
+var par=document.getElementsByTagName("p");
+document.write(par.length);
+
+
+</script>
+</body>
+</html>

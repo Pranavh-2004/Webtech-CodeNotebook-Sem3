@@ -1,0 +1,39 @@
+<!--props object to pass parameters from parent to child -->
+
+<html>
+	<head>
+		<title>React</title>
+		<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+	<body>
+	
+	<div id="d1"></div>
+	<div id="d2"></div>
+	<script type="text/babel">
+	class Sample extends React.Component{
+	render()
+	{
+	//this.props.College acts as a formal parameter, should be enclosed between {}
+	return <div><h1> I study in {this.props.College}</h1><p>Welocome!!!</p></div>;
+	}
+	}
+	
+	//rendering, in react@18 version
+	const add1=ReactDOM.createRoot(document.querySelector("#d1"));
+	
+	//College is name of the property which takes the value PESU
+	//render is a function which is a parent and passing a value PESU to its child Sample class
+	add1.render(<Sample College="PESU" />);
+	
+	//calling Sample class multiple times using div tag
+	const add2=ReactDOM.createRoot(document.querySelector("#d2"));
+	add2.render(<div>
+	            <Sample College="RV" />
+				<Sample College="DBIT" />
+				<Sample College="DSCE" />
+				</div>);
+	</script>
+	</body>
+	</html>

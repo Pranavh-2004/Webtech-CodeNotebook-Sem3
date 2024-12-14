@@ -1,0 +1,47 @@
+<!--createLinearGradient(x1, y1, x2, y2)-->
+
+<html>
+<head>
+<title>CANVAS</title>
+
+<script type="text/javascript">
+window.onload = function(){
+var c=document.getElementById('myCanvas');
+var ctx=c.getContext('2d'); 
+
+//createLinearGradient(x1, y1, x2, y2)
+ var gradient = ctx.createLinearGradient(0, 0, 500, 0);
+
+        // Add color stops to the gradient
+        gradient.addColorStop(0, 'red');    // Start with red
+        gradient.addColorStop(0.5, 'yellow'); // Transition to yellow in the middle
+        gradient.addColorStop(1, 'green');   // End with green
+
+        // Set the fill style to the gradient
+        ctx.fillStyle = gradient;
+
+        // Fill a rectangle with the gradient
+        ctx.fillRect(0, 0, 500, 500);
+		
+		var grad = ctx.createLinearGradient(600,0,800,300);
+
+        // Add color stops to the gradient
+        grad.addColorStop(0, 'blue');
+        grad.addColorStop(0.25, 'red');    		
+        grad.addColorStop(0.5, 'black'); 
+		grad.addColorStop(0.75, 'cyan');    
+        grad.addColorStop(1, 'gold');   
+		
+		ctx.strokeStyle = grad;
+		ctx.lineWidth=10;
+		ctx.beginPath();
+		ctx.moveTo(600,0);
+		ctx.lineTo(800,300);
+		ctx.stroke();
+}
+    </script>
+	</head>
+<body>
+	<canvas id="myCanvas" width="1000" height="1000"></canvas>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!-- hoisting -->
+
+<html>
+<head><title>hoisting</title>
+</head>
+<body bgcolor="lightblue">
+<script type="text/javascript">
+
+//function hoisting
+
+display();
+function display()
+{
+console.log("welcome");
+}
+
+//variable hoisting with var
+console.log(x);
+var x=23;     //only declaration is hoisted not initialization
+console.log(x);
+
+//variable hoisting with let and const //not possible
+console.log(y);
+console.log(z);
+let y=30;
+const z=20;
+
+
+
+
+
+
+</script>
+</body>
+</html>

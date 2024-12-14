@@ -1,0 +1,35 @@
+<!--progress bar-->
+
+<html>
+<head><title>Progress</title>
+
+
+<script>
+  function updateProgress() {
+  
+  //selecting progress bar 
+    var progressBar = document.getElementById('progress-bar');
+	
+  //selecting 0% that is part of span tag
+	var progressPercent=document.getElementById('progress-percent');
+	
+	//increasing the the value by 10
+    progressBar.value = progressBar.value + 10; // Increase progress by 10%
+ 
+    //displaying the dynamic change 
+    progressPercent.textContent = progressBar.value+'%';
+  }
+  
+</script>
+</head>
+<body>
+
+
+<progress id="progress-bar" value="0" max="100"></progress>
+<span id="progress-percent">0%</span><br><br>
+<button onclick="updateProgress()">Update Progress</button>
+
+
+
+</body>
+</html>

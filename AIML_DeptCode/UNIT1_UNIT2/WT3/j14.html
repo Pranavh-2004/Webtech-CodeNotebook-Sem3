@@ -1,0 +1,32 @@
+<!-- importing jQuery from CDN-->
+
+<html>
+<head><title>jQuery</title>
+</head>
+<body>
+<h1>HEADING</h1>
+<p> Welcome to PES!!!</p>
+<p> Welcome to AIML!!!</p>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script><!--online-->
+<script>
+
+//$() function to select elements 
+$("p").css("color", "blue");
+
+//specifying multiple styles
+$("h1").css({"color":"red",
+              "background-color":"yellow",
+			  "padding":"3px",
+			  "text-align":"center",
+			  "width":"150px",
+			  "border":"5px brown solid"});
+
+//background color			  
+$("body").css("background-color","lightblue");
+
+</script>
+
+
+</body>
+</html>

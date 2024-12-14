@@ -1,0 +1,44 @@
+<!-- arcTo() -->
+
+<html>
+<head>
+<title>CANVAS</title>
+
+<script type="text/javascript">
+window.onload = function(){
+var c=document.getElementById('myCanvas');//gets canvas element from dom
+var ctx=c.getContext('2d'); 
+
+  ctx.lineWidth = 2;
+
+        // Set the color of the lines (optional)
+        ctx.strokeStyle = 'blue';
+
+        // Begin a new path for drawing
+        ctx.beginPath();
+
+        // Move to the starting point (100, 100)
+        ctx.moveTo(100, 100);
+
+        // Draw a line to (200, 100)
+        ctx.lineTo(200, 100);
+
+        // Draw an arc to (200, 200) with a radius of 50
+        ctx.arcTo(300, 100, 300, 200, 50);
+
+        // Draw a line to (300, 300)
+        ctx.lineTo(300, 300);
+
+        // Render the path by stroking it
+        ctx.stroke();
+}
+</script>	
+
+</head>
+
+<body>
+<canvas  id="myCanvas" width="20000" height="10000">
+</canvas> 
+
+</body>
+</html>

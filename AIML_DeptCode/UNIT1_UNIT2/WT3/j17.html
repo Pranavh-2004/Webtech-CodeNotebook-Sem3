@@ -1,0 +1,64 @@
+<!-- addClass(),attr(), html(), val(), text() -->
+
+<html>
+<head><title>jQuery</title>
+<style>
+.head{color:brown;}
+.bold{background-color:yellow;}
+#p1{color:red;}
+</style>
+</head>
+<body>
+<h1>Heading1</h1>
+<p id="para1">Paragraph1</p>
+<h2 id="h2">Heading 2</h2>
+<p id="id1">Paragraph2</p>
+
+
+
+<form><input type="radio" name="gender" value="female" id="f">Female<br>
+<input type="radio" name="gender" value="female" id="m">Male<br>
+</form>
+
+<img src="india.png" width="100" height="100" id="img1">
+
+<script src="C:\Users\Smitha Udupa\Desktop\WT3\jquery-3.7.1.js"></script>
+<script>
+//addClass(), adding an existing class selector to heading
+$("h1").addClass("head bold");
+
+//attr(), get or set a value of an attribute
+//adding an existing id selector to paragraph
+$("h2").attr("id","p1");
+
+//get the value of an attribute src using id img1
+var img=$("#img1").attr("src");
+console.log(img);
+
+$("#img1").attr("src","AI.jpg");
+
+//html(), get or set the html content 
+//getting the content from p tag
+var content=$("#id1").html();
+console.log(content);
+//set the content
+$("#id1").html("<h3>New heading 3 replacing paragrapgh2</h3>");
+
+//text(), get or set the text of an element
+$("#para1").text("new content in place of paragraph1");
+
+var paracontent=$("#para1").html();
+console.log(paracontent);
+
+//val(), set or get the value of input elements
+var value=$("#m").val();
+console.log(value);
+
+$("#m").val("male");
+var val=$("#m").val();
+console.log(val);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- requesting for video file using js-->
+
+<html>
+	<head>
+		<title> XHR</title>
+		<script>
+		function getvideo(){
+		xhr=new XMLHttpRequest();
+		xhr.open("get","DES.mp4",true);
+		xhr.responseType="blob"; //blob-binary large object(data format)
+		xhr.send();
+		xhr.onreadystatechange=showdata;
+		}
+		function showdata(){
+			if(this.readyState==4 && this.status==200){				
+			let v1= document.createElement("video");
+			v1.src=URL.createObjectURL(this.response);
+			v1.controls=true;
+			document.querySelector("#container").appendChild(v1);
+			}
+		}
+		
+		
+	   </script>
+		
+	</head>
+	<body >
+	<button onclick="getvideo()">Get Video</button>
+	<div id="container"></div>
+		
+    </body>
+</html>

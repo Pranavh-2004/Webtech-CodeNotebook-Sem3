@@ -1,0 +1,45 @@
+<!--handling asynchronous code using promise object-->
+
+<html>
+    <head><title>promise object</title>
+</head>
+
+<body>
+
+<script>
+//promise state: pending-undefined,fulfilled-value and rejected-error
+//state and result properties of promise object
+
+let promise=new Promise(function(resolve,reject){
+
+//producing code
+
+const a=1+1;  //promise
+
+if(a==3)
+{
+resolve('promise fulfilled');
+}
+else
+{
+reject('promise unfulfilled');
+}
+});
+
+//linking producing code and consuming code with promise object
+//consuming code-> .then()/.catch() waits till producing code is executed
+//code inside promise.then is executed for resolve()
+promise.then(function(message){
+console.log(message);
+});
+
+//code inside promise.catch is executed for reject()
+promise.catch(function(message){
+console.log(message);
+});
+
+
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- GEO LOCATION -->
+
+<html>
+<head><title>GEO</title>
+</head>
+<body>
+<script>
+function getLocation() {
+navigator.geolocation.getCurrentPosition(showPosition, showError);
+}
+function showPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+			const dateTime = new Date(position.timestamp);
+            document.getElementById('location').innerHTML = 
+                `Latitude: ${latitude}<br>Longitude: ${longitude}<br>${dateTime}`;
+        }
+function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById('location').innerHTML = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById('location').innerHTML = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById('location').innerHTML = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById('location').innerHTML = "An unknown error occurred.";
+                    break;
+            }
+}
+</script>
+</head>
+<body>
+<button onclick="getLocation()">click here</button>
+<h1 id="location"></h>
+</body>
+</html>

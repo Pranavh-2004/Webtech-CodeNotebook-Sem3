@@ -1,0 +1,23 @@
+<!-- event propagation-->
+
+<html>
+<head>
+    
+    <title>Event Capturing Example</title>
+</head>
+<body>
+    <div style="padding: 30px; background-color: lightblue;">
+        <button>Click Me</button>
+    </div>
+
+    <script>
+        document.querySelector('div').addEventListener('click', function() {
+            alert('Div clicked!');
+        }, true); // Enabling capturing phase
+
+        document.querySelector('button').addEventListener('click', function() {
+            alert('Button clicked!');
+        }, true); // Enabling capturing phase
+    </script>
+</body>
+</html>

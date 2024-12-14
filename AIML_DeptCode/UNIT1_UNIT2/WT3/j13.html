@@ -1,0 +1,45 @@
+<!-- jQuery -->
+<!-- js inbuilt library-->
+<!-- provides a simple syntax that makes it easier to work 
+with HTML documents, traverse and manipulate elements, and 
+handle events across different browsers. -->
+<!--jQuery simplifies selecting, modifying, and interacting 
+with elements on the page.-->
+
+<!-- download jQuery, visit jQuery.com, right click on 
+"Download the uncompressed development version of jQuery 3.7.1" -> 
+"save link as" -> save in a folder -->
+
+<html>
+<head><title>jQuery</title>
+</head>
+<body>
+<h1>HEADING</h1>
+<p> Welcome to PES!!!</p>
+<p> Welcome to AIML!!!</p>
+
+<script src="C:\Users\Smitha Udupa\Desktop\WT3\jquery-3.7.1.js"></script> <!--offline-->
+<script>
+
+/* 
+let paras = document.querySelectorAll(“p”)
+for (let i=0; i<paras.length; i++)
+paras[i].style.color = “red”
+*/
+
+//$() function to select elements 
+$("p").css("color", "blue");
+
+//specifying multiple styles
+$("h1").css({"color":"red",
+              "background-color":"yellow",
+			  "padding":"3px",
+			  "text-align":"center",
+			  "width":"150px",
+			  "border":"5px brown solid"});
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- keys in react-->
+<!-- keys help keep track of elements mounted, updated and unmounted -->
+<html>
+  <head>
+    <title>React</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+  <div id="root"></div>
+  <script type="text/babel">
+  
+//Function with keys without map
+
+function Stuff(){
+  //const names=props.names;
+  return(
+  [ <p key="1"> Batman1</p>,
+    <p key="2"> IronMan1</p>,
+    <p key="3"> SpiderMan1</p> 
+  ])
+} //rendering group of elements using list instead of div
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(
+        <Stuff />
+      );
+	  </script>
+</body>
+</html>

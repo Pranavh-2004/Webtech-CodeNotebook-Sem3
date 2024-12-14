@@ -1,0 +1,32 @@
+<!-- event object and its properties-->
+<html>
+<head>
+    <title>Event Object Example</title>
+</head>
+<body>
+    <button onclick="handleClick(event)">Click Me</button><br><br>
+	<a href="https://www.hitech-gamer.com/" onclick="handleLinkClick(event)">Gaming Monitor</a><br><br>
+	<div> <button onclick="handleButtonClick(event)">Know More</button></div>
+    <script>
+	
+        //event object properties
+		function handleClick(event) {
+            // Access event properties
+            alert("Event Type: " + event.type); // Outputs: Event Type: click
+            alert("Clicked Element: " + event.target.tagName); // Outputs: Clicked Element: BUTTON
+    
+        }
+		
+		//event object methods
+		function handleLinkClick(event) {
+            event.preventDefault(); // Prevents the link from navigating
+            alert("Navigation prevented!");
+        }
+		
+		function handleButtonClick(event) {
+            event.stopPropagation(); // Stops the event from bubbling up to the div
+            alert("Button clicked, but event didn't propagate to the div.");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!--filled rectangle and outlined rectangle-->
+
+<html>
+<head>
+<title>CANVAS</title>
+
+<script type="text/javascript">
+window.onload = function(){
+var c=document.getElementById('myCanvas');//gets canvas element from dom
+var ctx=c.getContext('2d'); //returns a CanvasRenderingContext2D object, 
+                         //which provides methods for drawing on the canvas.
+ctx.fillStyle='blue';
+ctx.fillRect(50,50,150,75); //fillRect(x,y,width,height)
+
+ctx.strokeRect(50,150,150,100); //outline
+}
+</script>	
+
+</head>
+
+<body>
+<canvas  id="myCanvas" width="20000" height="2000">
+</canvas> 
+
+</body>
+</html>

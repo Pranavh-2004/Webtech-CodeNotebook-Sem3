@@ -1,0 +1,30 @@
+<!--requesting for json file using fetch() -->
+
+<html>
+	<head>
+		<title> Fetch</title>
+		<script>
+			function fetchdata(){
+				mydiv=document.querySelector("#container");
+				fetch('data.json')
+				.then(function(response){
+					return response.json();
+				})
+				.then(function(obj){
+					mydiv.innerHTML=JSON.stringify(obj);
+				})
+				.catch(function(error){
+					console.log(error.message);
+				})
+			}
+				
+		
+	   </script>
+		
+	</head>
+	<body >
+	<button onclick="fetchdata()">Fetch JSON</button>
+	<div id="container"></div>
+		
+    </body>
+</html>

@@ -1,0 +1,123 @@
+<!-- object creation -->
+
+<html>
+<head><title>object creation</title>
+</head>
+<body bgcolor="lightblue">
+<script type="text/javascript">
+
+
+//creating an object as key value pairs
+
+let obj= {        
+"name":"Shashank",
+"SRN":12345,
+cls:'BTech',
+Section:'A',
+FeePaid:true,
+roll:new Number(23),
+dis:function(){console.log("name="+this.name);}, 
+add:function(a,b){return a+b;}
+}
+
+console.log(obj.dis);
+console.log(obj.add);
+
+obj.dis();
+
+console.log(obj.add(34,34));
+
+var R=obj.add(3,3);
+console.log(R);
+
+console.log("SRN=",obj.SRN);
+console.log("SRN=",obj["SRN"]);
+console.log("SRN=",obj['SRN']);
+
+for(i in obj)
+console.log(i+"="+obj[i]);
+
+
+
+//creating an object using function constructor
+function Employee(name,salary)
+{
+this.n=name;
+this.s=salary;
+}
+
+var emp1=new Employee("Harish",20000);
+document.write(emp1); //emp1.n=Harish and emp1.s=20000
+document.write(emp1.n);
+
+function Empl(name,salary)
+{
+this.n=name;
+this.s=salary;
+console.log(this.n+"  "+this.s);
+}
+
+var emp2=new Empl("Priya",60000);
+
+//using class keyword
+class Person
+{
+constructor(name, age){
+this.name=name;
+this.name=age;
+}
+display()
+{
+console.log("Welcome");
+}
+}
+var p1=new Person();
+var p2=new Person();
+
+p1.display();
+p2.display();
+
+//using anonymous function
+var person1=new function()
+{
+this.name="Kritika";
+this.id=123;
+this.tel=3456;
+this.dis = function(){console.log("welcome");}
+}
+
+console.log(person1.name);
+person1.dis();
+
+//prototype property
+function student(name,id,section)
+{
+this.name=name;
+this.id=id;
+this.section=section;
+}
+
+var s1=new student("Vaani",123,"A");
+
+student.prototype.cgpa=null;
+
+s1.cgpa=7.9;
+
+console.log(s1);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

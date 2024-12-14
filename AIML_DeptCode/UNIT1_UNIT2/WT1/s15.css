@@ -1,0 +1,39 @@
+/* element selector */
+
+p {
+color:red;
+size:140;
+}
+
+
+/* id selector */
+
+#h {
+	border-color:cyan;
+	border-width:3px;
+}
+
+
+/* class selector */
+.center {
+  text-align: center;
+}
+
+/* element.class selector */
+
+h1.color {
+  color: brown;
+}
+
+
+/* element,element selector */
+
+h2,li {
+	color:green;
+}
+
+/* universal selector */
+* {
+	color:blue;
+}
+

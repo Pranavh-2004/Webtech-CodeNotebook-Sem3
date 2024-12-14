@@ -1,0 +1,36 @@
+<!-- event handling in jQuery-->
+
+<html>
+<head><title>event handling in jQuery</title>
+</head>
+<body>
+<h1>heading</h1>
+<p id="p1">Paragraph1</p>
+<p id="p2">Paragraph2</p>
+<p id="p3">Paragraph3</p>
+<p id="p4">Paragraph4</p>
+
+
+
+<script src="C:\Users\Smitha Udupa\Desktop\WT3\jquery-3.7.1.js"></script>
+<script>
+$("h1").click(function(){
+$("h1").slideToggle("slow");
+});
+
+$("#p1").click(function(){
+$("#p1").fadeOut(3000); //slow, fast, time in milliseconds
+$("#p1").fadeIn(3000);
+});
+   
+$("#p3").click(function(){
+$("#p3").hide();
+});	
+
+
+</script>
+
+
+
+</body>
+</html>

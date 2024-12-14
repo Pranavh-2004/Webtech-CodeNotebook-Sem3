@@ -1,0 +1,29 @@
+<!--requesting for video file using jQuery library -->
+
+<html>
+	<head>
+		<title> JQ AJAX</title>
+		<script src="https://code.jquery.com/jquery-3.7.1.js">
+		</script>
+		<script>
+			function getdata(){
+				$.ajax({
+					url:'data.txt',
+					method:'get',
+					success: function (result){
+						$("#container").html(result);
+					}
+				})
+				
+			}
+				
+		
+	   </script>
+		
+	</head>
+	<body >
+	<button onclick="getdata()">Get Data</button>
+	<div id="container"></div>
+		
+    </body>
+</html>

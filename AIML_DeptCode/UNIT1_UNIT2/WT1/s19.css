@@ -1,0 +1,15 @@
+p {
+color:blue;
+font-weight:bold;
+size:30;
+text-align:center;
+}
+
+hr {
+	border-width:2px;
+	border-color:red;	
+}
+
+h1{
+	color:cyan;
+}

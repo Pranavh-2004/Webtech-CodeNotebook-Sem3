@@ -1,0 +1,53 @@
+<!--rendering complex components using spread operator(...this.props) -->
+
+<html>
+	<head>
+		<title>React</title>
+		<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+	<body>
+	
+	<div id="d1"></div>
+	
+	<script type="text/babel">
+	
+	class Image extends React.Component{
+	render()
+	{
+	return  <img src={this.props.pic} width="100" height="100" />
+	}
+	}
+	
+	class Caption extends React.Component{
+	render()
+	{
+			
+			return <p>{this.props.caption}</p>;
+	}
+	}
+	
+	class Link extends React.Component {
+	render()
+	{
+			return <a href={this.props.link}>{this.props.linktext}</a>;
+	}
+	}
+	
+	class Result extends React.Component{
+	render()
+	{
+	return <div>
+	       <Image {...this.props} /> 
+		   <Caption {...this.props} />
+		   <Link {...this.props} {...this.props}/> </div>
+	}
+	}
+	
+	
+	const add=ReactDOM.createRoot(document.querySelector("#d1"));
+	add.render(<Result pic="Tiger.jpg" caption="National Park Karnataka!!! Tiger Reserve" link="https://aranya.gov.in/aranyacms/(S(jfuctbcav4o5pvxzfdcaipts))/English/TigerReserves.aspx" linktext="click here to know more"></Result>);
+	</script>
+	</body>
+	</html>

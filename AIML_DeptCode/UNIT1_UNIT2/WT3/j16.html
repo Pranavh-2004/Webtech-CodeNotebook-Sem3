@@ -1,0 +1,29 @@
+<!-- DOM manipulation-->
+
+<html>
+<head><title>jQuery</title>
+</head>
+<body>
+<p id="p1">Paragraph1</p>
+<p id="p2">Paragraph2</p>
+<script src="C:\Users\Smitha Udupa\Desktop\WT3\jquery-3.7.1.js"></script>
+<script>
+//before(),  insert a content or element before selected element
+$("#p1").before("<h1>Heading</h1>");
+
+//after(),  insert a content or element after selected element
+$("#p2").after("<footer>AIML</footer>");
+$("footer").css("color","red");
+
+//append()
+$("#p1").append("<p>New Content Paragraph1</p>");
+
+//appendTo()
+$("<p>New Content Paragraph2</p>").appendTo("#p2");
+
+//prepend()
+$("#p1").prepend("<strong>beginning paragrapgh1 </strong>");
+</script>
+</body>
+</html>
+

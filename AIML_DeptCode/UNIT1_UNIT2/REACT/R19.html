@@ -1,0 +1,48 @@
+<!-- keys in react using map()-->
+<!-- keys help keep track of elements mounted, updated and unmounted -->
+<html>
+  <head>
+    <title>React</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+  <div id="root1"></div>
+  <div id="root2"></div>
+  <script type="text/babel">
+  function NumberList(props) {
+        const numbers = props.numbers;
+        const listItems = numbers.map((num) =>
+        <li key={num}>{num*2}</li>
+        );
+        return (
+        <ul>{listItems}</ul>
+        );
+      }
+	  const numbers = [1, 2, 3, 4, 5];
+      const root = ReactDOM.createRoot(document.getElementById('root1'));
+      root.render(
+        <NumberList numbers={numbers} />
+		);
+
+     </script>
+	 
+	 <script type="text/babel">
+	 function NameList(props){
+				const names=props.names;
+				const listItems=names.map((name,index)=>
+					<li key={index}>{name}</li>
+				);
+				return(
+				<ol type="I">{listItems}</ol>
+				)
+			}
+			const names=["Batman1", "Ironman1","Spiderman1"];
+      const root = ReactDOM.createRoot(document.getElementById('root2'));
+      root.render(
+        <NameList names={names} />
+      );
+	  </script>
+</body>
+</html>

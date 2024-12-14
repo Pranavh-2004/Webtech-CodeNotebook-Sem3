@@ -1,0 +1,47 @@
+<!--useState() hook to make function component stateful-->
+
+<html>
+  <head>
+    <title>React</title>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/babel">
+	
+	//array destructuring-unpack the values of an array to individual variables instead of accessing them using index values
+	const array=[1,2,3,true]
+	const [a1, a2, a3, a4]=array //destructuring
+	console.log(a1,a2,a3,a4)
+      
+     function Counter() {
+        const [count, setCount] = React.useState(0); //useState() hook lets you add state to your function component
+													//returns an array with 2 elements
+        const increment = () => {
+          setCount(count + 1); //setCount() is an update function that re-renders the component
+        };
+
+        return (
+          <div>
+            <p>Count: {count}</p>
+            <button onClick={increment}>Increment</button>
+          </div>
+        );
+      }
+
+      // Render your React component
+	   const root = ReactDOM.createRoot(document.querySelector("#container"));
+      root.render(
+	  <div>
+        <Counter />
+		</div>
+      );
+     
+	  </script>
+  </body>
+</html>

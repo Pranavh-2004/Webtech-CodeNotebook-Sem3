@@ -1,0 +1,57 @@
+<!-- form -->
+
+<html>
+<head>
+<title>
+forms
+</title>
+</head>
+
+<body bgcolor="darkblue" text="white">
+
+<img src="form.png" width=100 height=100>
+<br><br><br>
+
+<form method="post" action="process.php" target="_blank">
+
+Name: <br>
+<input type="text" name="uname" size="50" value="--type here--">
+<br><br><br>
+
+Gender:<br>
+<input type="radio" name="gender" value="Male">Male
+<input type="radio" name="gender" value="Female">Female
+<br><br><br>
+
+Qualification:<br>
+<input type="checkbox" name="Qual" value="PhD">PhD
+<input type="checkbox" name="Qual" value="Mtech">MTech
+<input type="checkbox" name="Qual" value="BE">BE
+
+<br><br><br>
+
+Address:<br> 
+<textarea name="adds" rows="3" cols="30">type here</textarea>
+
+<br><br><br>
+
+State:<br>
+<select name="ustate">
+<option hidden>Select</option>
+<option value="KA">Karnataka</option>
+<option value="TN">Tamilnadu</option>
+<option value="UP">UttarPradesh</option>
+<option value="KL">Kerala</option>
+</select>
+
+<br><br><br>
+
+<input type="submit" value="submit">
+<input type="reset" value="clear form">
+
+</form>
+
+</body>
+</html>
+
+

@@ -1,0 +1,31 @@
+<!-- requesting for text file using fetch() -->
+
+<html>
+	<head>
+		<title> Fetch</title>
+		
+		<script>
+			function fetchdata(){
+				mydiv=document.querySelector("#container");
+				fetch('data.txt') //get request using fetch() API which returns a promise
+				.then(function(response){ //response is just a variable that holds the response from fetch()
+					return response.text();
+				})
+				.then(function(text){
+					mydiv.innerHTML=text;
+				})
+				.catch(function(error){
+					console.log(error.message);
+				})
+			}
+				
+		
+	   </script>
+		
+	</head>
+	<body >
+	<button onclick="fetchdata()">Fetch Text</button>
+	<div id="container"></div>
+		
+    </body>
+</html>

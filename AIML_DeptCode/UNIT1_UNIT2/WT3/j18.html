@@ -1,0 +1,56 @@
+<!-- event handling in jQuery-->
+
+<html>
+<head><title>event handling in jQuery</title>
+</head>
+<body>
+<h1>heading</h1>
+<p id="p1">Paragraph1</p>
+<p id="p2">Paragraph2</p>
+<p id="p3">Paragraph3</p>
+
+<p id="p4">Paragraph4</p>
+<form><input type="text" id="t1">Name</form>
+
+
+<script src="C:\Users\Smitha Udupa\Desktop\WT3\jquery-3.7.1.js"></script>
+<script>
+
+    $("#p1").click(function(){
+        alert('clicked paragraph1');
+    });
+	
+	$("#p2").on('click',function(){
+        alert('clicked paragraph2');
+    });
+	
+	$("#p3").on('click',function(event){
+        alert(event.type);
+		alert(event.target);
+    });
+	
+	//this refers to html element triggering the event
+	$("h1").click(function() {
+    var htmlString = $(this).html();
+	alert(htmlString);
+    });
+
+	
+	$("#t1").keydown(function(event){
+        alert(event.key);
+		
+    });
+	
+	//to remove the event handler
+	//$("#p3").off("click");
+	
+	
+	
+
+
+</script>
+
+
+
+</body>
+</html>

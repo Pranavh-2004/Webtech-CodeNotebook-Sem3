@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title> XHR</title>
+		<script>
+		function senddata(){
+		const xhr = new XMLHttpRequest();
+    xhr.open("POST", "dummy.php", true);
+    xhr.responseType = "json";
+    
+    const fd = new FormData(); //FormData class which helps in creating data
+    fd.append("name", "Sujay");  //data in the form of key/value pair
+    fd.append("srn", "PES2UG20CS247");
+    
+    xhr.send(fd);
+	xhr.onreadystatechange = showdata;
+		}
+		function showdata(){
+			
+			if(this.readyState === 4 && this.status === 200){
+     
+        // Assuming the response is JSON
+        let response = this.response;
+
+        // Display the data in the container
+        document.querySelector("#container").innerHTML = 
+            `Name: ${response.name} <br> SRN: ${response.srn}`;
+    }
+		}
+		
+		
+	   </script>
+		
+	</head>
+	<body >
+	<button onclick="senddata()">Send Data</button>
+	<div id="container"></div>
+		
+    </body>
+</html>

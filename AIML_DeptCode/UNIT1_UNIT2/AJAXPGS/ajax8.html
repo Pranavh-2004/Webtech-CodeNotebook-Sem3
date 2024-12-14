@@ -1,0 +1,33 @@
+<!--requesting for video file using fetch() -->
+
+<html>
+	<head>
+		<title> Fetch</title>
+		<script>
+			function fetchdata(){
+				mydiv=document.querySelector("#container");
+				fetch('DES.mp4')
+				.then(function(response){
+					return response.blob();
+				})
+				.then(function(data){
+					vid=document.createElement("video");
+					vid.controls=true;
+					vid.src=URL.createObjectURL(data);
+					mydiv.appendChild(vid);
+				})
+				.catch(function(error){
+					console.log(error.message);
+				})
+			}
+				
+		
+	   </script>
+		
+	</head>
+	<body >
+	<button onclick="fetchdata()">Fetch Video</button>
+	<div id="container"></div>
+		
+    </body>
+</html>

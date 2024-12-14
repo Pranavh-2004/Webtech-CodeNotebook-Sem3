@@ -1,0 +1,30 @@
+<!--inline event handler-->
+
+<html>
+<head><title>inline event handler</title>
+<script>
+function changecolor()
+{
+//predefined property to manipulate html style through js
+document.body.style.backgroundColor="yellow";
+}
+function textcolor(event)
+{
+//event object with property target inside the function
+event.target.style.color="red";
+}
+</script>
+
+</head>
+
+<body bgcolor="lightblue">
+
+<!--inline event handlers-->
+<p onclick="changecolor()"> Welcome to Event Handling!!! </p>
+
+
+<p onclick="textcolor(event)">PESU</p>
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!-- array functions-->
+
+<html>
+<head><title>array functions</title>
+</head>
+<body bgcolor="lightblue">
+<script type="text/javascript">
+
+//array 
+
+var arr3 = ["pesu", 12, true, 20.45, 'A', 20]
+
+//push
+arr3.push(44); //inserts an element at the end of the array
+console.log(arr3);
+
+//unshift   
+arr3.unshift("AIML");  //inserts an element at first
+console.log(arr3)
+
+//pop
+arr3.pop();   //deletes last element 
+console.log(arr3);
+
+//shift
+arr3.shift();  //removes first element 
+console.log(arr3);
+
+//join
+var a=[2,"pes",true]   
+console.log(a.join())   //joins all the elements to form a string
+
+//indexOf
+var a1=[1,2,30]   
+console.log(a1.indexOf(1))  //index number of an array element
+
+//sort
+var s=["orange","banana","apple"]
+console.log(s.sort());   //sorts taking ascii values of an element as a string in ascending order
+
+var s1=[2,1,0,7,29]
+console.log(s1.sort((a,b)=>a-b)) //ascending
+console.log(s1.sort((a,b)=>b-a)) //descending
+
+//concat
+var a3=[1,2,3], a4=[4,5,6]
+console.log(a3.concat(a4))  //joins 2 arrays //array concatenation
+
+
+//splice
+var a2=[1,2,3,4,5,6]
+console.log(a2.splice(1,3))  //removes elements
+console.log(a2)             //splice(start index,how many elements)
+ 
+var m=["jan","march","april"]
+m.splice(1,0,"feb")   //third parameter is new element to be added
+console.log(m)
+
+//delete
+delete arr3[2]       //deletes designated element provided index number
+console.log(arr3)
+
+
+
+
+</script>
+</body>
+</html>

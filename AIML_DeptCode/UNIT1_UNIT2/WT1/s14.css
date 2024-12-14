@@ -1,0 +1,49 @@
+
+
+body {
+background-image:url(sport.jpg);
+background-repeat: no-repeat;
+background-position-x: right ;
+background-position-y: center;
+}
+
+h1 {
+color:green;
+background-color:lightblue;
+padding:10px;
+text-align:center;
+border:5px dashed blue;
+margin-top:30px;
+margin-bottom:30px;
+}
+
+p{
+color:green;
+width:250px;
+text-align:justify;
+margin-top:10px;
+background-color:orange;
+padding:30px;
+
+position:sticky;
+left:20px;
+top:20px;
+
+}
+
+form{
+	margin-left:0px;
+	margin-top:20px;
+
+}
+
+input[type="submit"]{
+	background-color:lightblue;
+	color:orange;
+	width:100px;
+	border-radius:20px;
+	padding:20px;
+	font-size:20;
+	font-family:Times New Roman;
+	font-weight:bold;
+}

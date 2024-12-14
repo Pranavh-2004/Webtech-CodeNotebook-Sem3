@@ -1,0 +1,28 @@
+<!-- requesting for XML file using js-->
+
+<html>
+    <head>
+        <title>XHR</title>
+    </head>
+    
+    <body>
+        <button onclick="loaddata()">Load XML</button>
+        <div id="container"></div>
+		<script>
+        function loaddata(){
+            let xhr=new XMLHttpRequest();
+            xhr.open("get","data.xml",true);
+            xhr.onreadystatechange=showdata;
+            xhr.responseType="document";
+            xhr.send();
+        }
+        function showdata(){
+            if(this.readyState==4&&this.status==200){
+               
+                document.querySelector("#container").innerHTML=this.response;
+				console.log(this.response);
+            }
+        }
+    </script>
+    </body>
+</html>

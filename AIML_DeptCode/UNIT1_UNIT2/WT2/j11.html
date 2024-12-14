@@ -1,0 +1,47 @@
+<!-- functions -->
+
+<html>
+<head><title>Functions</title>
+</head>
+<body bgcolor="lightblue">
+<script type="text/javascript">
+
+function display()
+{
+console.log("welcome!!!");
+}
+display();   //function call
+
+function add()
+{
+return 2+2;   // returning values
+}
+var num=add();  //function call to a variable
+console.log(num);   //console.log(add());
+
+
+
+function SI(p, t, r,l,b)    //parameter passing
+{
+var SI = (p*t*r)/100;
+console.log("SI="+SI);
+return l*b;
+}
+var area=SI(10,2,5,6,6);    //function call with actual parameters
+console.log(area);
+
+function dis(num)
+{
+num =+prompt("enter the value");
+console.log(num+num);
+console.log(typeof num);
+}
+dis();
+
+//var c=prompt('enter your name');
+//console.log("My name is "+c);
+
+
+</script>
+</body>
+</html>

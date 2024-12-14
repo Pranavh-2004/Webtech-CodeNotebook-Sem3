@@ -1,0 +1,36 @@
+<!-- synchronous and asynchronous-->
+
+<html>
+<head><title>synchronous and asynchronous</title>
+</head>
+<body>
+<script>
+//synchronous
+/*
+Synchronous operations are executed sequentially, 
+meaning that each operation must complete before 
+the next one starts. The JavaScript engine processes 
+code line by line, blocking execution until the current 
+operation is finished.
+*/
+console.log("one");
+console.log("two");
+console.log("three");
+
+//asynchronous
+/*
+Asynchronous operations are executed independently of the main 
+program flow. They allow the program to perform tasks like waiting 
+for data from a server, reading files, or handling user input without 
+blocking the execution of subsequent code. This is achieved through 
+mechanisms like callbacks, promises.
+*/
+console.log('One');
+       setTimeout(function(){
+             console.log('Two')
+             }, 1000);
+       console.log('Three');  
+
+</script>
+</body>
+</html>

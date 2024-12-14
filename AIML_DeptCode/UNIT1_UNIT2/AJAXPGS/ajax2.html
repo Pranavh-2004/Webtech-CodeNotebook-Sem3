@@ -1,0 +1,32 @@
+<!--requesting for json file using js-->
+
+<html>
+	<head>
+		<title> XHR</title>
+		<script>
+		function loaddata(){
+		xhr=new XMLHttpRequest();
+		xhr.open("get","data.json",true);		
+		xhr.responseType="json";
+		xhr.send();
+		xhr.onreadystatechange=showdata;
+		}
+		function showdata(){		
+			if(this.readyState==4 && this.status==200){
+			document.querySelector("#container").innerHTML=this.response["SRN"];
+			var json=this.response;
+			console.log(json);
+
+			}
+		}
+		
+		
+	   </script>
+		
+	</head>
+	<body >
+	<button onclick="loaddata()">Load JSON</button>
+	<div id="container"></div>
+		
+    </body>
+</html>

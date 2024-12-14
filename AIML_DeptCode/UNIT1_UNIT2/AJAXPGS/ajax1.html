@@ -1,0 +1,38 @@
+<!--requesting for text file using js-->
+
+<html>
+    <head>
+        <title>XHR</title>
+    </head>
+    
+    <body>
+        <button onclick="loaddata()">Load Text</button>
+        <div id="container"></div>
+		
+		<script>
+        function loaddata(){
+            let xhr=new XMLHttpRequest(); //defining object for HTTp request
+            xhr.open("get","data.txt",true); //open(method,path,asynch);
+            xhr.send(); //send request to XAMPP
+			xhr.onreadystatechange=showdata;
+			//Integer indicating the state of the request, either:
+												//0 (uninitialized)
+												//1 (loading)
+												//2 (response headers received)
+												//3 (some response body received)
+												//4 (request complete)
+        }
+        function showdata(){
+         
+            if(this.readyState==4&&this.status==200)//It checks if the request is complete and successful
+			{									//200: "OK"
+												//403: "Forbidden"
+												//404: "Page not found"
+                
+                document.querySelector("#container").innerHTML=this.responseText; //responseXML
+            }																	  //responseType='json/blob'
+        }
+		
+    </script>
+    </body>
+</html>

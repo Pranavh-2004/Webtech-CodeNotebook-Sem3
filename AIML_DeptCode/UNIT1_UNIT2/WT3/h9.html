@@ -1,0 +1,24 @@
+<!-- drawing an image-->
+
+<html>
+<head>
+<title>CANVAS</title>
+
+
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500"></canvas>
+<script type="text/javascript">
+
+var c = document.getElementById('myCanvas');
+var ctx=c.getContext('2d'); 
+
+var img=new Image();
+img.src="india.png";
+
+img.onload=function(){
+ctx.drawImage(img,50,50,100,100); 
+}
+</script>
+</body>
+</html>

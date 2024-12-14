@@ -1,0 +1,55 @@
+<!--dom-->
+
+<html>
+<head><title>DOM</title>
+<style>
+#id{
+background-color:red;
+}
+.c
+{
+color:red;
+}
+</style>
+</head>
+<body bgcolor="lightblue">
+
+<h1 class="c">PESU</h1>
+<div class="c">AIML</div>
+
+<p id="id" style="color:yellow">Welcome</p>
+<p>Orientation Programme!!!!</p>
+
+<form><input type="text" name="uname"></form>
+
+
+<script>
+//name of the elements that are using id name 'id'
+var i=document.getElementById('id');
+document.write(i,"<br>");
+
+//name of the elements that are using class name 'cls'
+var j=document.getElementsByClassName('c');
+for(n=0;n<j.length;n++)
+document.write(j[n],"<br>");
+
+var k=document.getElementsByTagName('h1');
+for(n=0;n<k.length;n++)
+document.write(k[n].textContent,"<br>"); //OR k[n].innerHTML to get the content of any tag
+
+var m=document.getElementsByName('uname');
+for(n=0;n<m.length;n++)
+document.write(m[n].type,"<br>"); //m[n].type for specific input type
+
+var q=document.querySelector('#id');  //selects first element in the document that matches with the parameter
+document.write(q,"<br>");
+
+
+var s=document.querySelectorAll('p');//selects all the elements that matches with the parameter
+for(n=0;n<s.length;n++)
+document.write(s[n].textContent,"<br>");
+
+
+</script>
+</body>
+</html>

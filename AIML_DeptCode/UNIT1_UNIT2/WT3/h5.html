@@ -1,0 +1,31 @@
+<!--line and arc-->
+
+<html>
+<head>
+<title>CANVAS</title>
+
+<script type="text/javascript">
+window.onload = function(){
+var c=document.getElementById('myCanvas');//gets canvas element from dom
+var ctx=c.getContext('2d'); 
+
+ctx.strokeStyle="red";
+ctx.lineWidth=5;
+ctx.moveTo(50,50);  //moveTo(x1,y1)//first point
+ctx.lineTo(100,100);  //lineTo(x2,y2)//second point
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(200, 200, 100, 0, Math.PI, false);//arc(x, y, r, sAngle, eAngle, anticlockwise) 
+ctx.stroke();
+}
+</script>	
+
+</head>
+
+<body>
+<canvas  id="myCanvas" width="20000" height="10000">
+</canvas> 
+
+</body>
+</html>

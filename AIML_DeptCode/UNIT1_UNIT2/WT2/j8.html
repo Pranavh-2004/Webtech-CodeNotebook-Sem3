@@ -1,0 +1,48 @@
+<!-- array-->
+
+<html>
+<head><title>NP data-types</title>
+</head>
+<body bgcolor="lightblue">
+<script type="text/javascript">
+
+//array as an object
+
+var arr1 = new Array(3); //number of elements if one argument
+arr1[0]=10;
+arr1[1]="pesu";
+arr1[2]=true;
+document.write(arr1,"<br>");
+
+document.write("<hr>");
+
+var arr2 = new Array(10, 20, 30) //3 elements since more than one argument
+
+document.write(arr2,"<br>");
+
+document.write("<hr>");
+
+//array as a variable
+
+var arr3 = ["pesu", 12, true, 20.45, 'A', new Number(30)]
+document.write(arr3,"<br>");
+document.write(typeof arr3[5],"<br>");
+document.write("<hr>");
+
+document.write(arr1.length,"<br>");
+document.write(arr2.length,"<br>");
+document.write(arr3.length,"<br>");
+document.write("<hr>");
+
+arr3.length=10;
+document.write(arr3,"<br>");
+document.write(arr3.length,"<br>");
+
+for(i in arr3)
+document.write(i+"=>"+arr3[i]+"<br>");
+
+
+
+</script>
+</body>
+</html>
