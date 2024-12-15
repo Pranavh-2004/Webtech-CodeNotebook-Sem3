@@ -1,4 +1,3 @@
-
 //Function with keys without map
 /*
 function Stuff(){
@@ -16,7 +15,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 //Function with map-Ex 1
 
-      /*function NumberList(props) {
+/*function NumberList(props) {
         const numbers = props.numbers;
         const listItems = numbers.map((num) =>
         <li key={num.toString()}>{num*2}</li>
@@ -32,20 +31,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
         <NumberList numbers={numbers} />
       );*/
 
-
 //Function with map-Ex 2
 
-      function NameList(props){
-				const names=props.names;
-				const listItems=names.map((name,index)=>
-					<li key={index}>{name}</li>
-				);
-				return(
-				<ul>{listItems}</ul>
-				)
-			}
-			const names=["Batman1", "Ironman1","Spiderman1"];
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(
-        <NameList names={names} />
-      );
+function NameList(props) {
+  const names = props.names;
+  const listItems = names.map((name, index) => <li key={index}>{name}</li>);
+  return <ul>{listItems}</ul>;
+}
+const names = ["Batman1", "Ironman1", "Spiderman1"];
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<NameList names={names} />);
